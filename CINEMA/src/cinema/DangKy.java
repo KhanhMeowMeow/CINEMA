@@ -55,7 +55,7 @@ public class DangKy {
     }
     
     private void myGUI(){
-        System.out.println("khánh");
+        System.out.println("test commit");
        mainFrame = new JFrame();
        mainFrame.setSize(w, h);
        mainFrame.setLayout(null);
