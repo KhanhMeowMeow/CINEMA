@@ -69,23 +69,23 @@ public class DangNhapNV {
         mainFrame.setLocationRelativeTo(null);
 
         lblright = new JLabel();
-       // lblright.setBounds(0, 0, w / 2-30 + 120, h);
+        // lblright.setBounds(0, 0, w / 2-30 + 120, h);
         lblright.setOpaque(true);
-        lblright.setBackground(new Color(255,240,235));
-        lblright.setBounds(620, 0, w / 2-20, h);
+        lblright.setBackground(new Color(255, 240, 235));
+        lblright.setBounds(620, 0, w / 2 - 20, h);
         mainFrame.add(lblright);
 
-        ImageIcon image2 = new ImageIcon("D:\\CINEMA\\src\\img\\1.jpg");
+        ImageIcon image2 = new ImageIcon(getClass().getResource("/img/1.jpg"));
         lblleft = new JLabel(image2);
-      //  lblleft.setBounds(580, 0, w / 2+80 - 120, h-30);
-        lblleft.setBounds(0, 0, w / 2+20, h);
+        // lblleft.setBounds(580, 0, w / 2+80 - 120, h-30);
+        lblleft.setBounds(0, 0, w / 2 + 20, h);
         lblleft.setOpaque(true);
         lblleft.setBackground(Color.white);
         mainFrame.add(lblleft);
-   
+
         lblClose = new JLabel("x");
         lblClose.setFont(new Font("Arial", 1, 30));
-        lblClose.setBounds(cw+300, 0, 50, 50);
+        lblClose.setBounds(cw + 300, 0, 50, 50);
         lblClose.setCursor(new Cursor(12));
 
         lblClose.addMouseListener(new MouseAdapter() {
@@ -107,24 +107,24 @@ public class DangNhapNV {
         lblTitle.setBounds(10, 80, w / 2 + 0, ch);
         lblTitle.setFont(new Font("Arial", 1, 40));
         lblTitle.setOpaque(true);
-        //lblTitle.setBackground(Color.yellow);
-        lblTitle.setBackground(new Color(255,240,235));
+        // lblTitle.setBackground(Color.yellow);
+        lblTitle.setBackground(new Color(255, 240, 235));
         lblTitle.setForeground(Color.black);
         lblright.add(lblTitle);
 
         y += 150;
         mainPanel = new JPanel(new FlowLayout(0, 15, 25));
-        mainPanel.setBounds(10, y, w / 2 -40, h / 2 - 80);
-        mainPanel.setBackground(new Color(255,240,235));
-       // mainPanel.setBackground(Color.yellow);
+        mainPanel.setBounds(10, y, w / 2 - 40, h / 2 - 80);
+        mainPanel.setBackground(new Color(255, 240, 235));
+        // mainPanel.setBackground(Color.yellow);
         lblright.add(mainPanel);
 
-        ImageIcon image = new ImageIcon("D:\\CINEMA\\src\\img\\email.png");
+        ImageIcon image = new ImageIcon(getClass().getResource("/img/email.png"));
         lblEmail = new JLabel(image, JLabel.RIGHT);
         lblEmail.setPreferredSize(new Dimension(cw - 190, ch + 12));
         lblEmail.setFont(new Font("Arial", 1, 20));
         lblEmail.setOpaque(true);
-        lblEmail.setBackground(new Color(255,240,235));
+        lblEmail.setBackground(new Color(255, 240, 235));
         mainPanel.add(lblEmail);
 
         txtEmail = new JTextField("Email");
@@ -151,11 +151,11 @@ public class DangNhapNV {
         txtEmail.setPreferredSize(new Dimension(cw * 2 - 20, ch));
         mainPanel.add(txtEmail);
 
-        ImageIcon image1 = new ImageIcon("D:\\CINEMA\\src\\img\\lock.png");
+        ImageIcon image1 = new ImageIcon(getClass().getResource("/img/lock.png"));
         lblPassword = new JLabel(image1, JLabel.RIGHT);
         lblPassword.setPreferredSize(new Dimension(cw - 190, ch + 12));
-//       lblPassword.setOpaque(true);
-//       lblPassword.setBackground(Color.yellow);
+        // lblPassword.setOpaque(true);
+        // lblPassword.setBackground(Color.yellow);
         mainPanel.add(lblPassword);
 
         txtPassword = new JPasswordField("*****");
@@ -169,7 +169,7 @@ public class DangNhapNV {
                 txtPassword.setText("");
                 txtPassword.setFont(new Font("Arial", 1, 18));
                 txtPassword.setForeground(Color.black);
-                
+
             }
 
             public void focusLost(FocusEvent fe) {
@@ -184,28 +184,28 @@ public class DangNhapNV {
 
         y += ch * 3 + 80;
         btnPanel = new JPanel();
-        btnPanel.setBounds(40, y, w / 2-40, h / 3-60);
-        //btnPanel.setBackground(Color.yellow);
-        btnPanel.setBackground(new Color(255,240,235));
+        btnPanel.setBounds(40, y, w / 2 - 40, h / 3 - 60);
+        // btnPanel.setBackground(Color.yellow);
+        btnPanel.setBackground(new Color(255, 240, 235));
         lblright.add(btnPanel);
 
         btnLogin = new JButton("Đăng nhập");
-        btnLogin.setPreferredSize(new Dimension(cw-30, ch));
+        btnLogin.setPreferredSize(new Dimension(cw - 30, ch));
         btnLogin.setFont(new Font("Arial", 1, 18));
         btnLogin.setBackground(Color.pink);
         btnLogin.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent ae) {    
-                Login();               
+            public void actionPerformed(ActionEvent ae) {
+                Login();
             }
         });
         btnPanel.add(btnLogin);
 
         btnSignup = new JButton("Đăng ký");
-        btnSignup.setPreferredSize(new Dimension(cw-30, ch));
+        btnSignup.setPreferredSize(new Dimension(cw - 30, ch));
         btnSignup.setFont(new Font("Arial", 1, 18));
         btnSignup.setBackground(Color.pink);
-        //btnSignup.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        // btnSignup.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         btnPanel.add(btnSignup);
 
         lblForget = new JLabel("Quên mật khẩu?", JLabel.CENTER);
@@ -215,7 +215,7 @@ public class DangNhapNV {
 
         lblForget.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
-                //lblForget.setFont(new Font("Arial", 3, 17));
+                // lblForget.setFont(new Font("Arial", 3, 17));
                 lblForget.setForeground(Color.pink);
             }
 
@@ -225,7 +225,7 @@ public class DangNhapNV {
             }
 
             public void mouseClicked(MouseEvent me) {
-                
+
             }
         });
         btnPanel.add(lblForget);
@@ -235,81 +235,75 @@ public class DangNhapNV {
 
     private void Login() {
         String email = txtEmail.getText();
-        String password = new String(txtPassword.getPassword());     
-        KhachHang kh = khdao.SelectById(email);   
-        NhanVien nv = dao.SelectById(email);  
+        String password = new String(txtPassword.getPassword());
+        KhachHang kh = khdao.SelectById(email);
+        NhanVien nv = dao.SelectById(email);
 
-        if(nv==null && kh == null){  //Email k ton tai 2 bang
+        if (nv == null && kh == null) { // Email k ton tai 2 bang
             MsgBox.alert(null, "Email khong ton tai!");
         }
-        
-        if(nv != null && kh == null){ //Email chi ton tai bang NV
-           if(nv.getMatKhau().equals(password)){
-               Auth.user = nv;
-                if(Auth.isManager()){
+
+        if (nv != null && kh == null) { // Email chi ton tai bang NV
+            if (nv.getMatKhau().equals(password)) {
+                Auth.user = nv;
+                if (Auth.isManager()) {
                     MsgBox.alert(null, "QL dang nhap thanh cong!");
-                }else{
+                } else {
                     MsgBox.alert(null, "NV dn tt!");
                 }
-                
+
                 mainFrame.dispose();
-           }else{
-            MsgBox.alert(null, "Sai MK2");
+            } else {
+                MsgBox.alert(null, "Sai MK2");
             }
         }
-        
-        if(nv == null && kh != null){ //Email chi ton tai bang KH
-            if( kh.getMatKhau().equals(password)){
+
+        if (nv == null && kh != null) { // Email chi ton tai bang KH
+            if (kh.getMatKhau().equals(password)) {
                 Auth.KH = kh;
                 MsgBox.alert(null, "KH Dang nhap thanh cong!");
                 mainFrame.dispose();
-            }else{
-            MsgBox.alert(null, "Sai MK3");
+            } else {
+                MsgBox.alert(null, "Sai MK3");
             }
         }
-        if(nv != null && kh != null){ //Email ton tai 2 bang
-            
+        if (nv != null && kh != null) { // Email ton tai 2 bang
+
         }
     }
-    
-    private boolean Validate(){
-        if(txtEmail.getText().equals("")){
+
+    private boolean Validate() {
+        if (txtEmail.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập mã!");
             txtEmail.requestFocus();
             return false;
-        } 
-        
-//        String email="\\w+@\\w+(\\.\\w+){1,2}";
-//        Pattern pattern = Pattern.compile(email);
-//        Matcher matcher = pattern.matcher(txtEmail.getText());
-//        try{
-//            if(matcher.matches()==false)
-//                throw new Exception();
-//        }catch (Exception e){
-//             JOptionPane.showMessageDialog(null, "Email không đúng định dạng");
-//             txtEmail.requestFocus();
-//             return false;
-//           }
-        
-        if(txtPassword.getText().equals("")){
+        }
+
+        // String email="\\w+@\\w+(\\.\\w+){1,2}";
+        // Pattern pattern = Pattern.compile(email);
+        // Matcher matcher = pattern.matcher(txtEmail.getText());
+        // try{
+        // if(matcher.matches()==false)
+        // throw new Exception();
+        // }catch (Exception e){
+        // JOptionPane.showMessageDialog(null, "Email không đúng định dạng");
+        // txtEmail.requestFocus();
+        // return false;
+        // }
+
+        if (txtPassword.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập mã!");
             txtPassword.requestFocus();
             return false;
-        } 
+        }
         return true;
     }
 
     public static void main(String[] args) {
         new DangNhapNV();
     }
-    
-    //QUEN MAT KHAU
+
+    // QUEN MAT KHAU
     ////////////////////////////////////////////////////////
-    
-    
 
-    
-    
-
-    
 }
