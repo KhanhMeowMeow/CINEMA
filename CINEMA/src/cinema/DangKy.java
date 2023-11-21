@@ -55,7 +55,7 @@ public class DangKy {
     }
     
     private void myGUI(){
-        System.out.println("Tay đổi nhỏ");
+        System.out.println("Sửa");
        mainFrame = new JFrame();
        mainFrame.setSize(w, h);
        mainFrame.setLayout(null);
