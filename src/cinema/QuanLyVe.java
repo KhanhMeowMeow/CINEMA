@@ -1,11 +1,17 @@
 package cinema;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.Spring;
+import javax.swing.SpringLayout;
 
 public class QuanLyVe extends JFrame{
      private JPanel panPhim;
@@ -25,26 +31,20 @@ public class QuanLyVe extends JFrame{
 
           //Thiết kế cửa sổ
           setSize(w, h);
-          //setLayout(null);
           setLocationRelativeTo(null);
           getContentPane().setBackground(new Color(255,240,235));
           setTitle("Giao diện quản lý vé đặt");
           setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
           setDefaultCloseOperation(EXIT_ON_CLOSE);
+          setLayout(null);
           
           //Thêm components
           panPhim =  new JPanel();
-          panPhim.setSize(w*3, h);
-          panPhim.setBackground(Color.darkGray);
-
-          scrPhim = new JScrollPane(panPhim);
-          setSize(w, h/4);
-          scrPhim.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-          panPhim.setSize(w*3, h);
-          panPhim.setBackground(Color.darkGray);
+          panPhim.setBackground(Color.lightGray);
+          scrPhim = new JScrollPane(panPhim);   
+          scrPhim.setBounds(0, 0, w, h/3);  
+          panPhim.setPreferredSize(new Dimension( w, h/3));   
           add(scrPhim);
-          
-
 
 
 
