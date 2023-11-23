@@ -67,6 +67,7 @@ public class DangNhap {
         mainFrame.setLayout(null);
         mainFrame.setUndecorated(true);
         mainFrame.setLocationRelativeTo(null);
+        mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
 
         lblright = new JLabel();
         lblright.setBounds(0, 0, w / 2-30 + 120, h);

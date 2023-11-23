@@ -66,16 +66,6 @@ public class QuanLyVe extends JFrame{
                x += 200;
                
           }
-          
-
-
-
-
-
-
-
-
-
 
           mod_tbl_Phim = new DefaultTableModel(new String[]{"STT", "Tên Phim", "Số lượng vé", "Ngày"}, 100);
           tblPhim = new JTable(mod_tbl_Phim);

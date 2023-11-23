@@ -59,6 +59,7 @@ public class VaiTro_DN {
         mainFrame.setLayout(null);
         mainFrame.setUndecorated(true);
         mainFrame.setLocationRelativeTo(null);
+        mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
         
         lblClose = new JLabel("x");
         lblClose.setFont(new Font("Arial", 1, 30));
@@ -92,7 +93,7 @@ public class VaiTro_DN {
         mainPanel.setBounds(80, y, w-140, h/2+40);
         mainFrame.add(mainPanel);
         
-        ImageIcon nv = new ImageIcon("D:\\CINEMA\\src\\img\\user.png");
+        ImageIcon nv = new ImageIcon(getClass().getResource("/img/user.png"));
         btnNV = new JButton(nv);
         btnNV.setPreferredSize(new Dimension(cw+80, ch*2+20));
         btnNV.setName("Nhan Vien");
@@ -104,7 +105,7 @@ public class VaiTro_DN {
         });
         mainPanel.add(btnNV);
         
-        ImageIcon kh = new ImageIcon("D:\\CINEMA\\src\\img\\kh.png");
+        ImageIcon kh = new ImageIcon(getClass().getResource("/img/kh.png"));
         btnKH = new JButton(kh);
         btnKH.setPreferredSize(new Dimension(cw+80, ch*2+20));
         btnKH.setName("Khach Hang");

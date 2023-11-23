@@ -67,6 +67,7 @@ public class DangNhapNV {
         mainFrame.setLayout(null);
         mainFrame.setUndecorated(true);
         mainFrame.setLocationRelativeTo(null);
+        mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
 
         lblright = new JLabel();
        // lblright.setBounds(0, 0, w / 2-30 + 120, h);
@@ -302,6 +303,22 @@ public class DangNhapNV {
     }
 
     public static void main(String[] args) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
         new DangNhapNV();
     }    
 }
