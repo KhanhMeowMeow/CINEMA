@@ -19,7 +19,7 @@ import utils.JDBCHelper;
 public class KhachHangDAO extends MainDAO<KhachHang, String>
 {
     final String Insert_SQL = "insert into KhachHang (email, matkhau, tenkh) values (?,?,?)";
-    final String Update_SQL = "update KhachHang set  matkhau = ?, tenkh= ?, sodt = ?, diachi= ?, thongtinthanhtoan = ?, trangthai = ? where  email = ?";
+    final String Update_SQL = "update KhachHang set  matkhau = ?, tenkh= ?, sodt = ?, diachi= ?, thongtinthanhtoan = ?, trangthai = ? where email = ?";
     final String Delete_SQL = "update KhachHang set trangthai = 0 where  email = ?";
     final String SelectAll_SQL = "select * from KhachHang";
     final String SelectById_SQL = "select * from KhachHang Where email = ?";

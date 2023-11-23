@@ -255,22 +255,6 @@ public class DangKy {
     }
     
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
         new DangKy();
     }
     
@@ -301,7 +285,6 @@ public class DangKy {
     }
     
     private void DangKy(){
-      //  Validate();
         KhachHang kh = new KhachHang();
         kh.setEmailKH(txtEmail.getText());
         kh.setTenKH(txtUsername.getText());
@@ -313,15 +296,15 @@ public class DangKy {
         
         String mk2 = new String(txtPassword1.getPassword());
         if(!mk2.equals(kh.getMatKhau())){
-            JOptionPane.showMessageDialog(null, "sai mk2!");
+            JOptionPane.showMessageDialog(null, "Sai mật khẩu xác nhận!");
         }
         else{
             try {
                 dao.Insert(kh);
-                JOptionPane.showMessageDialog(null, "Dang ky thành công!");                
+                JOptionPane.showMessageDialog(null, "Đăng ký thành công!");                
             } catch (Exception e) {
-                throw new RuntimeException(e);
-               // JOptionPane.showMessageDialog(null, "Dang ky thất bại!");
+                //throw new RuntimeException(e);
+                JOptionPane.showMessageDialog(null, "Đăng ký thất bại!");
             }
         }
     }

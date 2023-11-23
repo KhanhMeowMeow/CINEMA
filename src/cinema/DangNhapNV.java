@@ -31,8 +31,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.LookAndFeel;
-import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import utils.Auth;
 import utils.MsgBox;
@@ -227,7 +225,8 @@ public class DangNhapNV {
             }
 
             public void mouseClicked(MouseEvent me) {
-                
+                mainFrame.dispose();
+                new QMK();
             }
         });
         btnPanel.add(lblForget);
@@ -242,38 +241,33 @@ public class DangNhapNV {
         NhanVien nv = dao.SelectById(email);  
 
         if(nv==null && kh == null){  //Email k ton tai 2 bang
-            MsgBox.alert(null, "Email khong ton tai!");
+            MsgBox.alert(null, "Email không tồn tại!");
         }
         
         if(nv != null && kh == null){ //Email chi ton tai bang NV
            if(nv.getMatKhau().equals(password)){
                Auth.user = nv;
                 if(Auth.isManager()){
-                    MsgBox.alert(null, "QL dang nhap thanh cong!");
+                    MsgBox.alert(null, "Quản lý đăng nhập thành công!");
                 }else{
-                    MsgBox.alert(null, "NV dn tc!");
+                    MsgBox.alert(null, "Nhân viên đăng nhập thành công!");
                 }               
                 mainFrame.dispose();
            }else{
-            MsgBox.alert(null, "Sai MK2");
+            MsgBox.alert(null, "Sai mật khẩu!");
             }
         }
         
         if(nv == null && kh != null){ //Email chi ton tai bang KH
             if( kh.getMatKhau().equals(password)){
                 Auth.KH = kh;
-                MsgBox.alert(null, "KH Dang nhap thanh cong!");
+                MsgBox.alert(null, "Khách hàng đăng nhập thành công!");
                 mainFrame.dispose();
             }else{
-                MsgBox.alert(null, "Sai MK3");
+                MsgBox.alert(null, "Sai mật khẩu!");
             }
         }
         if(nv != null && kh != null){ //Email ton tai 2 bang
-//            if(nv.getMatKhau().equals(password)){
-//                MsgBox.alert(null, "NV dang nhap thanh cong");
-//            }else if(kh.getMatKhau().equals(password)){
-//                MsgBox.alert(null, "KH dang nhap thanh cong");
-//            }else{
                 mainFrame.dispose();
                 new VaiTro_DN(password, nv, kh);
 //            }
@@ -282,7 +276,7 @@ public class DangNhapNV {
     
     private boolean Validate(){
         if(txtEmail.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập mã!");
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập email!");
             txtEmail.requestFocus();
             return false;
         } 
@@ -308,33 +302,6 @@ public class DangNhapNV {
     }
 
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
-
         new DangNhapNV();
-    }
-    
-    //QUEN MAT KHAU
-    ////////////////////////////////////////////////////////
-    
-    
-
-    
-    
-
-    
+    }    
 }

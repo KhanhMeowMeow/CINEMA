@@ -91,19 +91,20 @@ public class DoiMatKhau {
         
         lblEmail = new JLabel("Email:");
         lblEmail.setPreferredSize(new Dimension(h-110, ch));
-        lblEmail.setFont(new Font("Arial", 1, 20));
+        lblEmail.setFont(new Font("Arial", 1, 18));
         lblEmail.setOpaque(true);
         lblEmail.setBackground(new Color(255,240,235));
         mainPanel.add(lblEmail);
         
         lblPasswordht = new JLabel("Mật khẩu hiện tại:");
         lblPasswordht.setPreferredSize(new Dimension(h-110, ch));
-        lblPasswordht.setFont(new Font("Arial", 1, 20));
+        lblPasswordht.setFont(new Font("Arial", 1, 18));
         lblPasswordht.setOpaque(true);
         lblPasswordht.setBackground(new Color(255,240,235));
         mainPanel.add(lblPasswordht);
         
-        txtEmail = new JTextField();       
+        txtEmail = new JTextField();  
+        txtEmail.setFont(new Font("Arial", 1, 18));
         txtEmail.setBorder(new LineBorder(Color.black, 1, true));
         txtEmail.setPreferredSize(new Dimension(2*cw-10, ch));
         mainPanel.add(txtEmail);
@@ -115,14 +116,14 @@ public class DoiMatKhau {
         /////////////
         lblPassword1 = new JLabel("Mật khẩu mới:");
         lblPassword1.setPreferredSize(new Dimension(h-110, ch));
-        lblPassword1.setFont(new Font("Arial", 1, 20));
+        lblPassword1.setFont(new Font("Arial", 1, 18));
         lblPassword1.setOpaque(true);
         lblPassword1.setBackground(new Color(255,240,235));
         mainPanel.add(lblPassword1);
         
         lblPassword2 = new JLabel("Xác nhận mật khẩu:");
         lblPassword2.setPreferredSize(new Dimension(h-110, ch));
-        lblPassword2.setFont(new Font("Arial", 1, 20));
+        lblPassword2.setFont(new Font("Arial", 1, 18));
         lblPassword2.setOpaque(true);
         lblPassword2.setBackground(new Color(255,240,235));
         mainPanel.add(lblPassword2);

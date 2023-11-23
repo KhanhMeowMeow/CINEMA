@@ -130,12 +130,12 @@ public class VaiTro_DN {
     }
     private void KiemTraMK(String vaiTro)
     {
-        if (vaiTro.equals("Khach Hang"))
+        if(vaiTro.equals("Khach Hang"))
         {
-            if (password.equals(kh.getMatKhau()))
-                MsgBox.alert(this.mainFrame,"Khách hàng đăng nhập thành công");
+            if(password.equals(kh.getMatKhau()))
+                 MsgBox.alert(this.mainFrame,"Khách hàng đăng nhập thành công");
             else
-                MsgBox.alert(this.mainFrame, "Sai mật khẩu!!");
+                 MsgBox.alert(this.mainFrame, "Sai mật khẩu!!");
         }
         else 
         {
@@ -145,8 +145,7 @@ public class VaiTro_DN {
                     MsgBox.alert(this.mainFrame,"Quản lý đăng nhập thành công");
                 else
                     MsgBox.alert(this.mainFrame,"Nhân viên đăng nhập thành công");
-            }
-            
+            }          
             else
                 MsgBox.alert(this.mainFrame, "Sai mật khẩu!!");
         }
