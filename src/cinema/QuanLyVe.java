@@ -44,7 +44,7 @@ public class QuanLyVe extends JFrame{
           //Thêm components
           panPhim = new JPanel();
           panPhim.setPreferredSize(new Dimension(w, h/3));
-          panPhim.setBackground(new Color(255,220,255));
+          panPhim.setBackground(Color.WHITE);
 
           scrPhim = new JScrollPane(panPhim);
           scrPhim.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -98,7 +98,7 @@ public class QuanLyVe extends JFrame{
           panContainerItem_Phim.setLayout(null);
           panIMG_Phim = new JPanel();
           panIMG_Phim.setBounds(0, 0, 180,((h/2)-10) -70 );
-          panIMG_Phim.setBackground(Color.GREEN);
+          panIMG_Phim.setBackground(Color.lightGray);
           labPhim = new JLabel();
           labPhim.setFont(new Font("Arial", 0, 20));
           labPhim.setText(tenPhim);
