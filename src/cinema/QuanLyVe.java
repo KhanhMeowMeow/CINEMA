@@ -2,19 +2,11 @@ package cinema;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.Spring;
-import javax.swing.SpringLayout;
+import javax.swing.*;
 
 public class QuanLyVe extends JFrame{
-     private JPanel panPhim;
+     private JPanel panPhim, panContainer;
      private JScrollPane scrPhim;
      private JTable tblPhim;
 
@@ -36,19 +28,24 @@ public class QuanLyVe extends JFrame{
           setTitle("Giao diện quản lý vé đặt");
           setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
           setDefaultCloseOperation(EXIT_ON_CLOSE);
-          setLayout(null);
+          SpringLayout layout_container = new SpringLayout();
+          setLayout(layout_container);
+          
           
           //Thêm components
-          panPhim =  new JPanel();
-          panPhim.setBackground(Color.lightGray);
-          scrPhim = new JScrollPane(panPhim);   
-          scrPhim.setBounds(0, 0, w, h/3);  
-          panPhim.setPreferredSize(new Dimension( w, h/3));   
+          panContainer = new JPanel();
+          panContainer.setBackground(Color.gray);
+          panPhim = new JPanel();
+          panPhim.setPreferredSize(new Dimension(w, h/3));
+          panPhim.setBackground(Color.PINK);
+
+          scrPhim = new JScrollPane(panPhim); layout_container.putConstraint(SpringLayout.SOUTH, scrPhim, h/3, SpringLayout.NORTH, getContentPane());
+          scrPhim.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
           add(scrPhim);
-
-
-
-    
+          layout_container.putConstraint(SpringLayout.HORIZONTAL_CENTER, scrPhim, 0, SpringLayout.HORIZONTAL_CENTER, getContentPane());
+          layout_container.putConstraint(SpringLayout.WEST, scrPhim, 10, SpringLayout.WEST, getContentPane());
+          layout_container.putConstraint(SpringLayout.NORTH, scrPhim, 10, SpringLayout.NORTH, getContentPane());
+          layout_container.putConstraint(SpringLayout.SOUTH, scrPhim, h/3, SpringLayout.NORTH, scrPhim);
      }
      public static void main(String[] args) {
           try {
