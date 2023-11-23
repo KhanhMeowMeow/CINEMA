@@ -1,25 +1,34 @@
 package cinema;
 
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.geom.GeneralPath;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class QuanLyVe extends JFrame{
-     private JPanel panPhim, panContainer;
-     private JScrollPane scrPhim;
+     private JPanel panPhim;
+     private JScrollPane scrPhim, scrPhim_table;
      private JTable tblPhim;
+     
+     private DefaultTableModel mod_tbl_Phim;
 
+     int h = 600, w = 1200;
+          int ch = h / 12;
+          int cw = w / 5;
+          int x = 10, y = 10;
+          
      public QuanLyVe(){
           initComponents();
 
 
      }
      private void initComponents() {
-          int h = 600, w = 1200;
-          int ch = h / 12;
-          int cw = w / 5;
-          int x = 10, y = 10;
+          
 
           //Thiết kế cửa sổ
           setSize(w, h);
@@ -33,20 +42,80 @@ public class QuanLyVe extends JFrame{
           
           
           //Thêm components
-          panContainer = new JPanel();
-          panContainer.setBackground(Color.gray);
           panPhim = new JPanel();
           panPhim.setPreferredSize(new Dimension(w, h/3));
-          panPhim.setBackground(Color.PINK);
+          panPhim.setBackground(new Color(255,220,255));
 
-          scrPhim = new JScrollPane(panPhim); layout_container.putConstraint(SpringLayout.SOUTH, scrPhim, h/3, SpringLayout.NORTH, getContentPane());
+          scrPhim = new JScrollPane(panPhim);
           scrPhim.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
           add(scrPhim);
           layout_container.putConstraint(SpringLayout.HORIZONTAL_CENTER, scrPhim, 0, SpringLayout.HORIZONTAL_CENTER, getContentPane());
           layout_container.putConstraint(SpringLayout.WEST, scrPhim, 10, SpringLayout.WEST, getContentPane());
           layout_container.putConstraint(SpringLayout.NORTH, scrPhim, 10, SpringLayout.NORTH, getContentPane());
-          layout_container.putConstraint(SpringLayout.SOUTH, scrPhim, h/3, SpringLayout.NORTH, scrPhim);
+          layout_container.putConstraint(SpringLayout.SOUTH, scrPhim, h/2, SpringLayout.NORTH, scrPhim);
+
+          //thêm ItemPhim
+          panPhim.setLayout(null);
+          int x = 10;
+          int y = 10;
+          int wr = 200;
+          for(int i = 0; i <= 1000; i++){
+               panPhim.setPreferredSize(new Dimension(wr, h/3));
+               wr += 200;
+               panPhim.add(item(("Phim " + i), x, y, 200));
+               x += 200;
+               
+          }
+          
+
+
+
+
+
+
+
+
+
+
+          mod_tbl_Phim = new DefaultTableModel(new String[]{"STT", "Tên Phim", "Số lượng vé", "Ngày"}, 100);
+          tblPhim = new JTable(mod_tbl_Phim);
+          scrPhim_table = new JScrollPane(tblPhim);
+          add(scrPhim_table);
+          layout_container.putConstraint(SpringLayout.HORIZONTAL_CENTER, scrPhim_table, 0, SpringLayout.HORIZONTAL_CENTER, getContentPane());
+          layout_container.putConstraint(SpringLayout.NORTH, scrPhim_table, 10, SpringLayout.SOUTH, scrPhim);
+          layout_container.putConstraint(SpringLayout.WEST, scrPhim_table, 10, SpringLayout.WEST, getContentPane());
+          layout_container.putConstraint(SpringLayout.SOUTH, scrPhim_table, -10, SpringLayout.SOUTH, getContentPane());
+
+
+
      }
+     private JPanel item(String tenPhim, int x, int y, int w){
+          JPanel panContainerItem_Phim, panIMG_Phim;
+          JLabel labPhim;
+          panContainerItem_Phim = new JPanel();
+          panContainerItem_Phim.setBackground(null);
+          panContainerItem_Phim.setBounds(x, 10,w, (h/2)-20);
+          panContainerItem_Phim.setLayout(null);
+          panIMG_Phim = new JPanel();
+          panIMG_Phim.setBounds(0, 0, 180,((h/2)-10) -70 );
+          panIMG_Phim.setBackground(Color.GREEN);
+          labPhim = new JLabel();
+          labPhim.setFont(new Font("Arial", 0, 20));
+          labPhim.setText(tenPhim);
+          labPhim.setBounds(0, (h/2)-70, 190, 30);
+          labPhim.setOpaque(true);
+          labPhim.setBackground(null);
+          labPhim.setVerticalAlignment(SwingConstants.TOP);
+          labPhim.setHorizontalAlignment(SwingConstants.CENTER);
+          panContainerItem_Phim.add(panIMG_Phim);
+          panContainerItem_Phim.add(labPhim);
+
+          // panPhim.add(panContainerItem_Phim);
+          // panPhim.setLayout(null);
+
+          return panContainerItem_Phim;
+     }
+     
      public static void main(String[] args) {
           try {
           for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

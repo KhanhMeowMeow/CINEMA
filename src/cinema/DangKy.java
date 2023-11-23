@@ -60,6 +60,7 @@ public class DangKy {
        mainFrame.setLayout(null);
        mainFrame.setUndecorated(true);
        mainFrame.setLocationRelativeTo(null);
+       mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
              
        lblLeft = new JLabel();
        lblLeft.setBounds(560, 0, w / 2+50, h);
