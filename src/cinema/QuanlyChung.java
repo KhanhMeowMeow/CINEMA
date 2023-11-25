@@ -26,7 +26,12 @@ public class QuanlyChung extends JFrame {
           SpringLayout layout_container = new SpringLayout();
           setLayout(layout_container);
 
+<<<<<<< HEAD
           System.out.println("");
+=======
+          
+          System.out.println("Hú em ơi");
+>>>>>>> 4937ff89fe796cc70d6684648f6e12a274109ace
 
 
      }
