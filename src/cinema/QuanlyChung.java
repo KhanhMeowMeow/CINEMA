@@ -27,6 +27,7 @@ public class QuanlyChung extends JFrame {
           setLayout(layout_container);
 
           System.out.println("Dụ má git hub");
+          System.out.println("Dịt con mẹ mày");
 
 
 
