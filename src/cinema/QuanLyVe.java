@@ -39,7 +39,7 @@ public class QuanLyVe extends JFrame{
           setDefaultCloseOperation(EXIT_ON_CLOSE);
           SpringLayout layout_container = new SpringLayout();
           setLayout(layout_container);
-          System.out.println("khánh khahs khánh khánh");
+          System.out.println("rạp phim bất ổn");
           
           //Thêm components
           panPhim = new JPanel();
@@ -115,13 +115,13 @@ public class QuanLyVe extends JFrame{
                }
           }
           } catch (ClassNotFoundException ex) {
-          java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          java.util.logging.Logger.getLogger(QuanLyVe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (InstantiationException ex) {
-          java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          java.util.logging.Logger.getLogger(QuanLyVe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (IllegalAccessException ex) {
-          java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          java.util.logging.Logger.getLogger(QuanLyVe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-          java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          java.util.logging.Logger.getLogger(QuanLyVe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } 
           new QuanLyVe().setVisible(true);
      }
