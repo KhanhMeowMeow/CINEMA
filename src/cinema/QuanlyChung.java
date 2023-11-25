@@ -29,7 +29,7 @@ public class QuanlyChung extends JFrame {
 
 
 
-          
+
      }
      public static void main(String[] args) {
           try {
@@ -39,16 +39,16 @@ public class QuanlyChung extends JFrame {
                          break;
                     }
                }
-               } catch (ClassNotFoundException ex) {
-               java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-               } catch (InstantiationException ex) {
-               java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-               } catch (IllegalAccessException ex) {
-               java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-               } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-               java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-               } 
+          } catch (ClassNotFoundException ex) {
+          java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          } catch (InstantiationException ex) {
+          java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          } catch (IllegalAccessException ex) {
+          java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+          java.util.logging.Logger.getLogger(QuanlyChung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+          } 
 
-               new QuanlyChung().setVisible(true);
+          new QuanlyChung().setVisible(true);
      }
 }
