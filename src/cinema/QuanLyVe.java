@@ -39,7 +39,6 @@ public class QuanLyVe extends JFrame{
           setDefaultCloseOperation(EXIT_ON_CLOSE);
           SpringLayout layout_container = new SpringLayout();
           setLayout(layout_container);
-          System.out.println("rạp phim bất ổn");
           
           //Thêm components
           panPhim = new JPanel();
