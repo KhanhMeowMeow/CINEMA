@@ -18,9 +18,9 @@ public class QuanLyVe extends JFrame{
      private DefaultTableModel mod_tbl_Phim;
 
      int h = 600, w = 1200;
-          int ch = h / 12;
-          int cw = w / 5;
-          int x = 10, y = 10;
+     int ch = h / 12;
+     int cw = w / 5;
+     int x = 10, y = 10;
           
      public QuanLyVe(){
           initComponents();
