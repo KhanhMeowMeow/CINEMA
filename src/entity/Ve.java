@@ -5,6 +5,8 @@
  */
 package entity;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LENOVO
@@ -82,6 +84,8 @@ public class Ve {
         return "Ve{" + "maVe=" + maVe + ", maSuatChieu=" + maSuatChieu + ", maGhe=" + maGhe + ", thanhTien=" + thanhTien + ", emailKH=" + emailKH + ", emailNV=" + emailNV + '}';
     }
     
-    
+    public void themve(){
+        JOptionPane.showMessageDialog(null, "Đã thêm vé");
+    }
     
 }

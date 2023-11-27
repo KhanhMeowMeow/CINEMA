@@ -58,7 +58,7 @@ public class QuanLyVe extends JFrame{
           int x = 10;
           int y = 10;
           int wr = 200;
-          for(int i = 0; i <= 1000; i++){
+          for(int i = 0; i <= 100; i++){
                panPhim.setPreferredSize(new Dimension(wr, h/3));
                wr += 200;
                panPhim.add(item(("Phim " + i), x, y, 200));
@@ -98,7 +98,8 @@ public class QuanLyVe extends JFrame{
           labPhim.setHorizontalAlignment(SwingConstants.CENTER);
           panContainerItem_Phim.add(panIMG_Phim);
           panContainerItem_Phim.add(labPhim);
-
+          
+          
           // panPhim.add(panContainerItem_Phim);
           // panPhim.setLayout(null);
 

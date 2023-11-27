@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 public class QuanlyChung extends JFrame {
@@ -12,6 +13,8 @@ public class QuanlyChung extends JFrame {
      int cw = w / 5;
      int x = 10, y = 10;
      
+     private JPanel panContainer;
+
      public QuanlyChung(){
           initComponents();
      }
@@ -26,7 +29,7 @@ public class QuanlyChung extends JFrame {
           SpringLayout layout_container = new SpringLayout();
           setLayout(layout_container);
 
-
+          
 
      }
      public static void main(String[] args) {
