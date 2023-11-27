@@ -1,11 +1,8 @@
 package cinema;
 
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.geom.GeneralPath;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
