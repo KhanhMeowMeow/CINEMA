@@ -3,6 +3,7 @@ package cinema;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -98,7 +99,11 @@ public class QuanLyVe extends JFrame{
           labPhim.setHorizontalAlignment(SwingConstants.CENTER);
           panContainerItem_Phim.add(panIMG_Phim);
           panContainerItem_Phim.add(labPhim);
-          panIMG_Phim.addMouseListener(listenQuanLyVe.getListenQuanLyVe());
+          panIMG_Phim.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    listenQuanLyVe.getListenQuanLyVe().xemve_quanLyVe();
+               }
+          });
           
           
           return panContainerItem_Phim;

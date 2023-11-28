@@ -3,11 +3,14 @@ package cinema;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.SpringLayout;
@@ -106,6 +109,43 @@ public class QuanlyChung extends JFrame {
           btnQuanLyPhim.setBounds(160, 60, x_btn, y_btn);
           btnQuanLyVe.setBounds(315, 5, x_btn, y_btn);
           btnQuanLyxuatChieu.setBounds(315, 60, x_btn, y_btn);
+          
+          btnThongKe.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+          btnQuanLyxuatChieu.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+          btnQuanLyVe.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+          btnQuanLyPhim.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+          btnQuanLyNhanSu.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+          btnDoiMatKhau.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+          btnDangXuat.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    JOptionPane.showMessageDialog(null, "Comming soon !");
+               }
+          });
+
      }
      public static void main(String[] args) {
           try {
