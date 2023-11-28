@@ -1,11 +1,9 @@
 package control.listenMouseQuanLyVe;
 
-import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 
-import cinema.QuanLyVe;
 import entity.Ve;
 
 public class listenQuanLyVe implements MouseListener {
@@ -18,22 +16,22 @@ public class listenQuanLyVe implements MouseListener {
      }
      @Override
      public void mousePressed(MouseEvent e) {
-          System.out.println("Giữ"); 
+          System.out.println(""); 
      }
 
      @Override
      public void mouseReleased(MouseEvent e) {
-          System.out.println("Thả chuột");
+          System.out.println("");
      }
 
      @Override
      public void mouseEntered(MouseEvent e) {
-          System.out.println("Ở trên đối tượng");
+          System.out.println("");
      }
 
      @Override
      public void mouseExited(MouseEvent e) {
-          System.out.println("Thoát khỏi đối tượng");
+          System.out.println("");
           
      }
      
