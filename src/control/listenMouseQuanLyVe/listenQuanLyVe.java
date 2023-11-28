@@ -3,6 +3,8 @@ package control.listenMouseQuanLyVe;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
+
 
 
 
@@ -12,7 +14,7 @@ public class listenQuanLyVe implements MouseListener {
      }
      @Override
      public void mouseClicked(MouseEvent e) {
-          
+          JOptionPane.showMessageDialog(null,"click");
      }
      @Override
      public void mousePressed(MouseEvent e) {
