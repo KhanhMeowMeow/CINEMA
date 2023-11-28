@@ -36,7 +36,6 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import utils.MsgBox;
 
-
 /**
  *
  * @author ngoth
