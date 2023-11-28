@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 
-import entity.Ve;
+
 
 public class listenQuanLyVe implements MouseListener {
      public static listenQuanLyVe getListenQuanLyVe(){
@@ -12,7 +12,7 @@ public class listenQuanLyVe implements MouseListener {
      }
      @Override
      public void mouseClicked(MouseEvent e) {
-          Ve.themve();
+          
      }
      @Override
      public void mousePressed(MouseEvent e) {
