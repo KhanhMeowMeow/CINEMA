@@ -19,8 +19,8 @@ public class NhanVienDAO extends MainDAO<NhanVien, String>
 {
     final String Insert_SQL = "insert into NhanVien (email, matkhau, hoten, sodt, ngaysinh, gioitinh, diachi, vaitro, "
             + "hinh, trangthai) values (?,?,?,?,?,?,?,?,?,?)";
-    final String Update_SQL = "update NhanVien set matkhau = ?, hoten= ?, sodt =?, ngaysinh = ?, gioitinh = ?, diachi =?, vaitro = ? , hinh = ?, trangthai = ? where email = ?";
-              
+    final String Update_SQL = "update NhanVien set  matkhau = ?, hoten= ?, sodt =?, ngaysinh = ?, gioitinh = ?"
+            + " diachi =? , vaitro = ? , hinh = ?, trangthai = ? where email = ?";
     final String Delete_SQL = "update NhanVien set trangthai = 0 where email = ? ";
     final String SelectAll_SQL = "select * from NhanVien";
     final String SelectById_SQL = "select * from NhanVien Where email = ?";

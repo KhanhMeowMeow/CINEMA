@@ -17,8 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -60,7 +58,6 @@ public class DoiMatKhau {
        mainFrame.setUndecorated(true);
        mainFrame.setLocationRelativeTo(null);
        mainFrame.getContentPane().setBackground(new Color(255,240,235));
-       mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
              
        lblClose = new JLabel("x");
         lblClose.setFont(new Font("Arial", 1, 40));
@@ -94,20 +91,19 @@ public class DoiMatKhau {
         
         lblEmail = new JLabel("Email:");
         lblEmail.setPreferredSize(new Dimension(h-110, ch));
-        lblEmail.setFont(new Font("Arial", 1, 18));
+        lblEmail.setFont(new Font("Arial", 1, 20));
         lblEmail.setOpaque(true);
         lblEmail.setBackground(new Color(255,240,235));
         mainPanel.add(lblEmail);
         
         lblPasswordht = new JLabel("Mật khẩu hiện tại:");
         lblPasswordht.setPreferredSize(new Dimension(h-110, ch));
-        lblPasswordht.setFont(new Font("Arial", 1, 18));
+        lblPasswordht.setFont(new Font("Arial", 1, 20));
         lblPasswordht.setOpaque(true);
         lblPasswordht.setBackground(new Color(255,240,235));
         mainPanel.add(lblPasswordht);
         
-        txtEmail = new JTextField();  
-        txtEmail.setFont(new Font("Arial", 1, 18));
+        txtEmail = new JTextField();       
         txtEmail.setBorder(new LineBorder(Color.black, 1, true));
         txtEmail.setPreferredSize(new Dimension(2*cw-10, ch));
         mainPanel.add(txtEmail);
@@ -119,14 +115,14 @@ public class DoiMatKhau {
         /////////////
         lblPassword1 = new JLabel("Mật khẩu mới:");
         lblPassword1.setPreferredSize(new Dimension(h-110, ch));
-        lblPassword1.setFont(new Font("Arial", 1, 18));
+        lblPassword1.setFont(new Font("Arial", 1, 20));
         lblPassword1.setOpaque(true);
         lblPassword1.setBackground(new Color(255,240,235));
         mainPanel.add(lblPassword1);
         
         lblPassword2 = new JLabel("Xác nhận mật khẩu:");
         lblPassword2.setPreferredSize(new Dimension(h-110, ch));
-        lblPassword2.setFont(new Font("Arial", 1, 18));
+        lblPassword2.setFont(new Font("Arial", 1, 20));
         lblPassword2.setOpaque(true);
         lblPassword2.setBackground(new Color(255,240,235));
         mainPanel.add(lblPassword2);
@@ -185,22 +181,6 @@ public class DoiMatKhau {
     }
     
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
         new DoiMatKhau();
     }
     

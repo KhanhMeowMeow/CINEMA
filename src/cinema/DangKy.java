@@ -60,7 +60,6 @@ public class DangKy {
        mainFrame.setLayout(null);
        mainFrame.setUndecorated(true);
        mainFrame.setLocationRelativeTo(null);
-       mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
              
        lblLeft = new JLabel();
        lblLeft.setBounds(560, 0, w / 2+50, h);
@@ -68,7 +67,7 @@ public class DangKy {
        lblLeft.setBackground(new Color(255,240,235));
        mainFrame.add(lblLeft);
        
-        ImageIcon image2 = new ImageIcon(getClass().getResource("/img/b.gif"));
+        ImageIcon image2 = new ImageIcon("D:\\CINEMA\\src\\img\\b.gif");
         lblRight = new JLabel(image2);
         lblRight.setBounds(x, 0, w / 2 +30, h);
         lblRight.setOpaque(true);
@@ -105,7 +104,7 @@ public class DangKy {
         mainPanel.setBackground(new Color(255,240,235));       
         lblLeft.add(mainPanel);
         
-        ImageIcon image = new ImageIcon(getClass().getResource("/img/user.png"));       
+        ImageIcon image = new ImageIcon("D:\\CINEMA\\src\\img\\user.png");       
         lblUsername = new JLabel(image, JLabel.RIGHT);
         lblUsername.setPreferredSize(new Dimension(cw-155, ch));
         lblUsername.setFont(new Font("Arial", 1, 20));
@@ -136,7 +135,7 @@ public class DangKy {
         txtUsername.setPreferredSize(new Dimension(2*cw-50, ch));
         mainPanel.add(txtUsername);
         ///////////////
-        ImageIcon email = new ImageIcon(getClass().getResource("/img/email.png"));       
+        ImageIcon email = new ImageIcon("D:\\CINEMA\\src\\img\\email.png");       
         lblEmail = new JLabel(email, JLabel.RIGHT);
         lblEmail.setPreferredSize(new Dimension(cw-155, ch));
         lblEmail.setOpaque(true);
@@ -169,7 +168,7 @@ public class DangKy {
         mainPanel.add(txtEmail);  
 
         ///////////////
-        ImageIcon key = new ImageIcon(getClass().getResource("/img/lock.png"));       
+        ImageIcon key = new ImageIcon("D:\\CINEMA\\src\\img\\lock.png");       
         lblPassword = new JLabel(key, JLabel.RIGHT);
         lblPassword.setPreferredSize(new Dimension(cw-155, ch));
         lblPassword.setFont(new Font("Arial", 1, 20));
@@ -201,7 +200,7 @@ public class DangKy {
         txtPassword.setPreferredSize(new Dimension(2*cw-50, ch));
         mainPanel.add(txtPassword);
      ///////////////
-        ImageIcon key1 = new ImageIcon(getClass().getResource("/img/xnkey.png"));       
+        ImageIcon key1 = new ImageIcon("D:\\CINEMA\\src\\img\\xnkey.png");       
         lblPassword1 = new JLabel(key1, JLabel.RIGHT);
         lblPassword1.setPreferredSize(new Dimension(cw-155, ch));
         lblPassword1.setFont(new Font("Arial", 1, 20));
@@ -256,22 +255,6 @@ public class DangKy {
     }
     
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
         new DangKy();
     }
     
@@ -302,6 +285,7 @@ public class DangKy {
     }
     
     private void DangKy(){
+      //  Validate();
         KhachHang kh = new KhachHang();
         kh.setEmailKH(txtEmail.getText());
         kh.setTenKH(txtUsername.getText());
@@ -313,15 +297,15 @@ public class DangKy {
         
         String mk2 = new String(txtPassword1.getPassword());
         if(!mk2.equals(kh.getMatKhau())){
-            JOptionPane.showMessageDialog(null, "Sai mật khẩu xác nhận!");
+            JOptionPane.showMessageDialog(null, "sai mk2!");
         }
         else{
             try {
                 dao.Insert(kh);
-                JOptionPane.showMessageDialog(null, "Đăng ký thành công!");                
+                JOptionPane.showMessageDialog(null, "Dang ky thành công!");                
             } catch (Exception e) {
-                //throw new RuntimeException(e);
-                JOptionPane.showMessageDialog(null, "Đăng ký thất bại!");
+                throw new RuntimeException(e);
+               // JOptionPane.showMessageDialog(null, "Dang ky thất bại!");
             }
         }
     }

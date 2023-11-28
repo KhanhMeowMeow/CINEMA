@@ -67,7 +67,6 @@ public class DangNhapNV {
         mainFrame.setLayout(null);
         mainFrame.setUndecorated(true);
         mainFrame.setLocationRelativeTo(null);
-        mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
 
         lblright = new JLabel();
        // lblright.setBounds(0, 0, w / 2-30 + 120, h);
@@ -76,7 +75,7 @@ public class DangNhapNV {
         lblright.setBounds(620, 0, w / 2-20, h);
         mainFrame.add(lblright);
 
-        ImageIcon image2 = new ImageIcon(getClass().getResource("/img/1.jpg"));
+        ImageIcon image2 = new ImageIcon("D:\\CINEMA\\src\\img\\1.jpg");
         lblleft = new JLabel(image2);
       //  lblleft.setBounds(580, 0, w / 2+80 - 120, h-30);
         lblleft.setBounds(0, 0, w / 2+20, h);
@@ -120,7 +119,7 @@ public class DangNhapNV {
        // mainPanel.setBackground(Color.yellow);
         lblright.add(mainPanel);
 
-        ImageIcon image = new ImageIcon(getClass().getResource("/img/email.png"));
+        ImageIcon image = new ImageIcon("D:\\CINEMA\\src\\img\\email.png");
         lblEmail = new JLabel(image, JLabel.RIGHT);
         lblEmail.setPreferredSize(new Dimension(cw - 190, ch + 12));
         lblEmail.setFont(new Font("Arial", 1, 20));
@@ -152,7 +151,7 @@ public class DangNhapNV {
         txtEmail.setPreferredSize(new Dimension(cw * 2 - 20, ch));
         mainPanel.add(txtEmail);
 
-        ImageIcon image1 = new ImageIcon(getClass().getResource("/img/lock.png"));
+        ImageIcon image1 = new ImageIcon("D:\\CINEMA\\src\\img\\lock.png");
         lblPassword = new JLabel(image1, JLabel.RIGHT);
         lblPassword.setPreferredSize(new Dimension(cw - 190, ch + 12));
 //       lblPassword.setOpaque(true);
@@ -226,8 +225,7 @@ public class DangNhapNV {
             }
 
             public void mouseClicked(MouseEvent me) {
-                mainFrame.dispose();
-                new QMK();
+                
             }
         });
         btnPanel.add(lblForget);
@@ -242,33 +240,38 @@ public class DangNhapNV {
         NhanVien nv = dao.SelectById(email);  
 
         if(nv==null && kh == null){  //Email k ton tai 2 bang
-            MsgBox.alert(null, "Email không tồn tại!");
+            MsgBox.alert(null, "Email khong ton tai!");
         }
         
         if(nv != null && kh == null){ //Email chi ton tai bang NV
            if(nv.getMatKhau().equals(password)){
                Auth.user = nv;
                 if(Auth.isManager()){
-                    MsgBox.alert(null, "Quản lý đăng nhập thành công!");
+                    MsgBox.alert(null, "QL dang nhap thanh cong!");
                 }else{
-                    MsgBox.alert(null, "Nhân viên đăng nhập thành công!");
+                    MsgBox.alert(null, "NV dn tc!");
                 }               
                 mainFrame.dispose();
            }else{
-            MsgBox.alert(null, "Sai mật khẩu!");
+            MsgBox.alert(null, "Sai MK2");
             }
         }
         
         if(nv == null && kh != null){ //Email chi ton tai bang KH
             if( kh.getMatKhau().equals(password)){
                 Auth.KH = kh;
-                MsgBox.alert(null, "Khách hàng đăng nhập thành công!");
+                MsgBox.alert(null, "KH Dang nhap thanh cong!");
                 mainFrame.dispose();
             }else{
-                MsgBox.alert(null, "Sai mật khẩu!");
+                MsgBox.alert(null, "Sai MK3");
             }
         }
         if(nv != null && kh != null){ //Email ton tai 2 bang
+//            if(nv.getMatKhau().equals(password)){
+//                MsgBox.alert(null, "NV dang nhap thanh cong");
+//            }else if(kh.getMatKhau().equals(password)){
+//                MsgBox.alert(null, "KH dang nhap thanh cong");
+//            }else{
                 mainFrame.dispose();
                 new VaiTro_DN(password, nv, kh);
 //            }
@@ -277,7 +280,7 @@ public class DangNhapNV {
     
     private boolean Validate(){
         if(txtEmail.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập email!");
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập mã!");
             txtEmail.requestFocus();
             return false;
         } 
@@ -303,22 +306,16 @@ public class DangNhapNV {
     }
 
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhapNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
         new DangNhapNV();
-    }    
+    }
+    
+    //QUEN MAT KHAU
+    ////////////////////////////////////////////////////////
+    
+    
+
+    
+    
+
+    
 }

@@ -67,7 +67,6 @@ public class DangNhap {
         mainFrame.setLayout(null);
         mainFrame.setUndecorated(true);
         mainFrame.setLocationRelativeTo(null);
-        mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
 
         lblright = new JLabel();
         lblright.setBounds(0, 0, w / 2-30 + 120, h);
@@ -75,7 +74,7 @@ public class DangNhap {
         lblright.setBackground(new Color(255,240,235));
         mainFrame.add(lblright);
 
-        ImageIcon image2 = new ImageIcon(getClass().getResource("/img/h.png"));
+        ImageIcon image2 = new ImageIcon("D:\\CINEMA\\src\\img\\h.png");
         lblleft = new JLabel(image2);
         lblleft.setBounds(580, 0, w / 2+80 - 120, h);
         lblleft.setOpaque(true);
@@ -117,7 +116,7 @@ public class DangNhap {
         mainPanel.setBackground(new Color(255,240,235));
         lblright.add(mainPanel);
 
-        ImageIcon image = new ImageIcon(getClass().getResource("/img/email.png"));
+        ImageIcon image = new ImageIcon("D:\\CINEMA\\src\\img\\email.png");
         lblEmail = new JLabel(image, JLabel.CENTER);
         lblEmail.setPreferredSize(new Dimension(cw - 155, ch + 12));
         lblEmail.setFont(new Font("Arial", 1, 20));
@@ -149,7 +148,7 @@ public class DangNhap {
         txtEmail.setPreferredSize(new Dimension(cw * 2 - 10, ch));
         mainPanel.add(txtEmail);
 
-        ImageIcon image1 = new ImageIcon(getClass().getResource("/img/lock.png"));
+        ImageIcon image1 = new ImageIcon("D:\\CINEMA\\src\\img\\lock.png");
         lblPassword = new JLabel(image1, JLabel.RIGHT);
         lblPassword.setPreferredSize(new Dimension(cw - 155, ch + 12));
 //       lblPassword.setOpaque(true);
@@ -289,22 +288,6 @@ public class DangNhap {
     }
 
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
         new DangNhap();
     }
 }

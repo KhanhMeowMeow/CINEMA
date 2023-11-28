@@ -5,8 +5,6 @@
  */
 package entity;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author LENOVO
@@ -19,7 +17,7 @@ public class Ve {
     private String emailKH;
     private String emailNV;
 
-    public Ve(){
+    public Ve() {
     }
 
     public Ve(Integer maVe, Integer maSuatChieu, String maGhe, float thanhTien, String emailKH, String emailNV) {
@@ -84,8 +82,6 @@ public class Ve {
         return "Ve{" + "maVe=" + maVe + ", maSuatChieu=" + maSuatChieu + ", maGhe=" + maGhe + ", thanhTien=" + thanhTien + ", emailKH=" + emailKH + ", emailNV=" + emailNV + '}';
     }
     
-    public static void themve(){
-        JOptionPane.showMessageDialog(null, "Đã thêm vé");
-    }
+    
     
 }

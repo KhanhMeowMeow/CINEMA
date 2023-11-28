@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/CINEMA/src/utils/JDBCHelper.java</file>
+            <file>file:/D:/CINEMA/src/cinema/DangNhapNV.java</file>
+            <file>file:/D:/CINEMA/src/utils/XEmail.java</file>
+            <file>file:/D:/CINEMA/src/cinema/QMK.java</file>
+            <file>file:/D:/CINEMA/src/DAO/NhanVienDAO.java</file>
+        </group>
     </open-files>
 </project-private>
