@@ -21,17 +21,18 @@ public class Auth
     public static void Clear()
     {
         Auth.user = null;
-       
+        Auth.KH = null;
     }
-    
-    public static void KHang()
-    {
-         Auth.KH = null;
-    }
-    
+
     public static boolean isLogin()
     {
         return Auth.user != null;
+        
+    }
+    public static boolean isLoginKH()
+    {
+        return Auth.KH != null;
+        
     }
     
     public static boolean isManager()

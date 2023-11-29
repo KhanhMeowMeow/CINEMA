@@ -59,6 +59,8 @@ public class DangNhap {
     public DangNhap() {
         myGui();
         btnLogin.requestFocus();
+        txtEmail.setText("captainamerica303@gmail.com");
+        txtPassword.setText("111127");
     }
 
     private void myGui() {     
@@ -251,6 +253,7 @@ public class DangNhap {
             if( kh.getMatKhau().equals(password)){
                 Auth.KH = kh;
                 MsgBox.alert(null, "KH Dang nhap thanh cong!");
+                new HomeTest();
                 mainFrame.dispose();
             }else{
             MsgBox.alert(null, "Sai MK3");
