@@ -17,7 +17,7 @@ public class JDBCHelper
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=DA1_RapPhim;";
     private static String user ="sa";
-    private static String pass = "songlong";
+    private static String pass = "111111";
     
     // nap driver
     static 
