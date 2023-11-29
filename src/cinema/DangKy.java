@@ -70,7 +70,7 @@ public class DangKy {
        
         ImageIcon image2 = new ImageIcon(getClass().getResource("/img/b.gif"));
         lblRight = new JLabel(image2);
-        lblRight.setBounds(x, 0, w / 2 +30, h);
+        lblRight.setBounds(0, 0, w / 2 +30, h);
         lblRight.setOpaque(true);
         lblRight.setBackground(Color.black);
         mainFrame.add(lblRight);
@@ -241,6 +241,7 @@ public class DangKy {
         btnDangky.setPreferredSize(new Dimension(cw, ch));
         btnDangky.setFont(new Font("Arial", 1, 18));
         btnDangky.setBackground(Color.pink);
+        btnDangky.setBorderPainted(false);
         btnDangky.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 if(Validate()){
@@ -264,13 +265,13 @@ public class DangKy {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DangKy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } 
         new DangKy();
     }

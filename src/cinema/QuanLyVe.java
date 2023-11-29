@@ -3,17 +3,23 @@ package cinema;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import control.listenMouseQuanLyVe.listenQuanLyVe;
+import entity.Ve;
 
 public class QuanLyVe extends JFrame{
      private JPanel panPhim;
      private JScrollPane scrPhim, scrPhim_table;
      private JTable tblPhim;
-     
      private DefaultTableModel mod_tbl_Phim;
-
+     public JPanel panContainerItem_Phim, panIMG_Phim;
+     private JLabel labPhim;
      int h = 600, w = 1200;
      int ch = h / 12;
      int cw = w / 5;
@@ -21,9 +27,8 @@ public class QuanLyVe extends JFrame{
           
      public QuanLyVe(){
           initComponents();
-
-
      }
+     
      private void initComponents() {
           
 
@@ -73,18 +78,17 @@ public class QuanLyVe extends JFrame{
           layout_container.putConstraint(SpringLayout.SOUTH, scrPhim_table, -10, SpringLayout.SOUTH, getContentPane());
 
 
-
      }
+     
      private JPanel item(String tenPhim, int x, int y, int w){
-          JPanel panContainerItem_Phim, panIMG_Phim;
-          JLabel labPhim;
+          
           panContainerItem_Phim = new JPanel();
           panContainerItem_Phim.setBackground(null);
           panContainerItem_Phim.setBounds(x, 10,w, (h/2)-20);
           panContainerItem_Phim.setLayout(null);
           panIMG_Phim = new JPanel();
           panIMG_Phim.setBounds(0, 0, 180,((h/2)-10) -70 );
-          panIMG_Phim.setBackground(Color.lightGray);
+          panIMG_Phim.setBackground(Color.PINK);
           labPhim = new JLabel();
           labPhim.setFont(new Font("Arial", 0, 20));
           labPhim.setText(tenPhim);
@@ -95,12 +99,17 @@ public class QuanLyVe extends JFrame{
           labPhim.setHorizontalAlignment(SwingConstants.CENTER);
           panContainerItem_Phim.add(panIMG_Phim);
           panContainerItem_Phim.add(labPhim);
+          panIMG_Phim.addMouseListener(new MouseAdapter() {
+               public void mouseClicked(MouseEvent e){
+                    listenQuanLyVe.getListenQuanLyVe().xemve_quanLyVe();
+               }
+          });
           
           
-          // panPhim.add(panContainerItem_Phim);
-          // panPhim.setLayout(null);
-
           return panContainerItem_Phim;
+     }
+     public void themve(){
+          JOptionPane.showMessageDialog(null, "Đã thêm");
      }
      
      public static void main(String[] args) {

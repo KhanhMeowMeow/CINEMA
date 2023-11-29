@@ -59,8 +59,10 @@ public class Phong {
 
     @Override
     public String toString() {
+        return this.maPhong;
+    }
+    public String XuatPhong() {
         return "Phong{" + "maPhong=" + maPhong + ", soLuongGhe=" + soLuongGhe + ", tinhTrang=" + tinhTrang + ", trangThai=" + trangThai + '}';
     }
-    
     
 }

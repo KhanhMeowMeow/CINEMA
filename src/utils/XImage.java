@@ -26,7 +26,7 @@ public class XImage
     public static Image getAppIcon()
     {
         URL url = XImage.class.getResource("/com/edusys/Hinh/fpt.png");
-        return new ImageIcon(url).getImage();
+        return new ImageIcon(url).getImage().getScaledInstance(300, 450, Image.SCALE_SMOOTH);
     }
     
     public static void save(File src)
@@ -50,7 +50,7 @@ public class XImage
     
     public static ImageIcon read(String fileName)
     {
-        File path = new File("logos", fileName);
+        File path = new File("D:\\Duan1_Pro1014\\CINEMA-20231127T032041Z-001\\CINEMA\\src\\img", fileName);
         return new ImageIcon(path.getAbsolutePath());
     }
 }

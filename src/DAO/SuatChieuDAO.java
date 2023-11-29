@@ -5,6 +5,8 @@
  */
 package DAO;
 
+import entity.Phim;
+import entity.Phong;
 import entity.SuatChieu;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -17,17 +19,19 @@ import utils.JDBCHelper;
  */
 public class SuatChieuDAO extends MainDAO<SuatChieu, Integer > {
 
-    final String insert_SQL = "insert into SuatChieu (masuatchieu, maphim, nguoitao, maphong, batdau, ketthuc, ngaychieu, trangthai)"
-            + " values (?,?,?,?,?,?,?,?) ";
-    final String update_SQL = "update SuatChieu set batdau = ?, ketthuc = ?, ngaychieu = ? trangthai = ? where masuatchieu = ?";
+    final String insert_SQL = "insert into SuatChieu (maphim, nguoitao, maphong, batdau, ketthuc, ngaychieu)"
+            + " values (?,?,?,?,?,?) ";
+    final String update_SQL = "update SuatChieu set batdau = ?, ketthuc = ?, ngaychieu = ? where masuatchieu = ?";
     
-    final String delete_SQL = "update SuatChieu set trangThai = 0 where masuatchieu = ?";
-    final String selectAll_SQL = "select * from SuatChieu";
+    final String delete_SQL = "DELETE FROM Suatchieu WHERE masuatchieu = ?";
+    final String selectAll_SQL = "select * from suatchieu Order by ngaychieu desc";
     final String selectById_SQL = "select * from SuatChieu where masuatchieu= ?";
+    final String selectByMaPhimMaPhong_SQL="SELECT * FROM SuatChieu  where maphong = ?";
+    
     @Override
     public void Insert(SuatChieu E) {
         JDBCHelper.Update(insert_SQL, E.getMaSuatChieu(), E.getMaPhim(), E.getNguoiTao(), E.getMaPhong(), 
-                E.getBatDau(), E.getKetThuc(), E.getNgayChieu(), E.isTrangThai());
+                E.getBatDau(), E.getKetThuc(), E.getNgayChieu());
     }
 
     @Override
@@ -52,7 +56,14 @@ public class SuatChieuDAO extends MainDAO<SuatChieu, Integer > {
             return null;
         return listSC.get(0);
     }
-
+    
+    public SuatChieu selectByMaPhimMaPhong_SQL(String MaPhim,String MaPhong) {
+        List<SuatChieu> listSC = new ArrayList<>();
+        if(listSC.isEmpty())
+            return null;
+        return listSC.get(0);
+    }
+    
     @Override
     public List<SuatChieu> selectBySQL(String sql, Object... args) {
         List<SuatChieu> listSC = new ArrayList<>();
@@ -75,6 +86,18 @@ public class SuatChieuDAO extends MainDAO<SuatChieu, Integer > {
             throw new RuntimeException();
         }
         return listSC;
+    }
+
+    public List<SuatChieu> selectByMaPhimMaPhong_SQL(String maphong) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM SuatChieu  where maphong = ?";
+        return this.selectBySQL(sql,maphong);
+    }
+
+    public List<SuatChieu> selectByMaPhimMaPhong_SQL(Phong phg) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM SuatChieu  where maphong = ?";
+        return this.selectBySQL(sql,phg);
     }
     
 }

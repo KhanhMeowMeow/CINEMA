@@ -87,7 +87,7 @@ public class DoiMatKhau {
         mainFrame.add(lblTitle);
         
         y+=130;
-        mainPanel = new JPanel(new FlowLayout(0,10,20));
+        mainPanel = new JPanel(new FlowLayout(0,10,5));
         mainPanel.setBounds(0, y-45, cw*4+20, ch*6);
         mainPanel.setBackground(new Color(255,240,235));       
         mainFrame.add(mainPanel);
@@ -143,13 +143,14 @@ public class DoiMatKhau {
         
         y+=ch*5+10;
         btnPanel = new JPanel();
-        btnPanel.setBounds(0, y, cw*4+20, ch*2);
+        btnPanel.setBounds(0, y - 50, cw*4+20, ch*2);
         btnPanel.setBackground(new Color(255,240,235));
         
         btnDoiMK = new JButton("Đổi mật khẩu");
         btnDoiMK.setPreferredSize(new Dimension(cw, ch));
         btnDoiMK.setFont(new Font("Arial", 1, 20));
         btnDoiMK.setBackground(Color.pink);
+        btnDoiMK.setBorderPainted(false);
         btnDoiMK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 doiMatKhau();

@@ -194,6 +194,7 @@ public class DangNhapNV {
         btnLogin.setPreferredSize(new Dimension(cw-30, ch));
         btnLogin.setFont(new Font("Arial", 1, 18));
         btnLogin.setBackground(Color.pink);
+        btnLogin.setBorderPainted(false);
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {    
@@ -206,7 +207,14 @@ public class DangNhapNV {
         btnSignup.setPreferredSize(new Dimension(cw-30, ch));
         btnSignup.setFont(new Font("Arial", 1, 18));
         btnSignup.setBackground(Color.pink);
-        //btnSignup.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        btnSignup.setBorderPainted(false);
+        btnSignup.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {    
+                new DangKy();
+                mainFrame.dispose();
+            }
+        });
         btnPanel.add(btnSignup);
 
         lblForget = new JLabel("Quên mật khẩu?", JLabel.CENTER);
@@ -250,8 +258,10 @@ public class DangNhapNV {
                Auth.user = nv;
                 if(Auth.isManager()){
                     MsgBox.alert(null, "Quản lý đăng nhập thành công!");
+                    new quanLiNhanSuJFrame();
                 }else{
                     MsgBox.alert(null, "Nhân viên đăng nhập thành công!");
+                    new quanLiNhanSuJFrame();
                 }               
                 mainFrame.dispose();
            }else{

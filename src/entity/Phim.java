@@ -119,6 +119,9 @@ public class Phim {
 
     @Override
     public String toString() {
+            return this.tenPhim;
+    }
+    public String xuatTTP(){
         return "Phim{" + "maPhim=" + maPhim + ", tenPhim=" + tenPhim + ", thoiLuong=" + thoiLuong + ", theLoai=" + theLoai + ", namSX=" + namSX + ", nuocSX=" + nuocSX + ", noiDung=" + noiDung + ", poster=" + poster + ", dienVien=" + dienVien + ", trangThai=" + trangThai + '}';
     }
     

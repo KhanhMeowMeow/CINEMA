@@ -14,8 +14,6 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -53,7 +51,6 @@ public class QuenMK_2 {
         mainFrame.getContentPane().setBackground(new Color(255,240,235));
         mainFrame.setUndecorated(true);
         mainFrame.setLocationRelativeTo(null);
-        mainFrame.setIconImage(new ImageIcon(getClass().getResource("/img/logo.png")).getImage());
         
         lblTitle = new JLabel("QUÊN MẬT KHẨU",JLabel.CENTER);
         lblTitle.setFont(new Font("Arial", 1, 35));
@@ -130,22 +127,6 @@ public class QuenMK_2 {
     }
     
     public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuenMK_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuenMK_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuenMK_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuenMK_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } 
         new QuenMK_2();
     }
     

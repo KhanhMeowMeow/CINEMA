@@ -101,7 +101,7 @@ public class SuatChieu {
 
     @Override
     public String toString() {
-        return "SuatChieu{" + "maSuatChieu=" + maSuatChieu + ", maPhim=" + maPhim + ", nguoiTao=" + nguoiTao + ", maPhong=" + maPhong + ", batDau=" + batDau + ", ketThuc=" + ketThuc + ", ngayChieu=" + ngayChieu + ", trangThai=" + trangThai + '}';
+        return this.maPhim + this.ngayChieu;
     }
     
     

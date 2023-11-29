@@ -17,7 +17,7 @@ public class JDBCHelper
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=DA1_RapPhim;";
     private static String user ="sa";
-    private static String pass = "123456";
+    private static String pass = "111111";
     
     // nap driver
     static 
@@ -106,4 +106,16 @@ public class JDBCHelper
         
         return null;
     }
+    
+    public static ResultSet query(String sql,Object...args)throws SQLException{
+        try {
+            PreparedStatement stmt = getStmt(sql, args);
+            return stmt.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        }
+        
+    }
+
+    
 }

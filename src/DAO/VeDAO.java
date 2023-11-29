@@ -17,16 +17,16 @@ import utils.JDBCHelper;
  */
 public class VeDAO extends MainDAO<Ve, Integer>  {
 
-    final String insert_SQL = "insert into Ve (mave, masuatchieu, maghe, thanhtien, khachhang, nhanvien)"
-            + "values (?,?,?,?,?,?)";
+    final String insert_SQL = "insert into Ve (mave, masuatchieu, maghe, thanhtien, khachhang, nhanvien,thanhtoan)"
+            + "values (?,?,?,?,?,?,?)";
     final String update_SQL = "update Ve set thanhtien = ? where mave = ?";
-//    final String delete_SQL = "update Ve set trang";
+    final String delete_SQL = "delete ve where maghe = ? and masuatchieu = ?";
     final String selectAll_SQL = "select * from Ve";
-    final String selectById_SQL = "select * from Ve where mave = ?";
+    final String selectById_SQL = "select * from Ve where maghe = ? and masuatchieu = ?";
     @Override
     public void Insert(Ve E) {
         JDBCHelper.Update(insert_SQL, E.getMaVe(), E.getMaSuatChieu(), E.getMaGhe(), 
-                E.getThanhTien(), E.getEmailKH(), E.getEmailNV());
+                E.getThanhTien(), E.getEmailKH(), E.getEmailNV(),E.isThanhToan());
     }
 
     @Override
@@ -38,15 +38,19 @@ public class VeDAO extends MainDAO<Ve, Integer>  {
     public void Delete(Integer ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public void deleteGhe(String maGhe, Integer maSuatChieu)
+    {
+        JDBCHelper.Update(delete_SQL, maGhe,maSuatChieu);
+    }
 
     @Override
     public List<Ve> SelectAll() {
         return selectBySQL(selectAll_SQL);
     }
 
-    @Override
-    public Ve SelectById(Integer Id) {
-        List<Ve> listVe = new ArrayList<>();
+    public Ve SelectByMaGhe(String maGhe, Integer maSuatChieu) {
+        List<Ve> listVe = selectBySQL(selectById_SQL,maGhe,maSuatChieu);
         if(listVe.isEmpty())
             return null;
         return listVe.get(0);
@@ -65,7 +69,7 @@ public class VeDAO extends MainDAO<Ve, Integer>  {
                 v.setThanhTien(rs.getFloat("thanhtien"));
                 v.setEmailKH(rs.getString("khachhang"));
                 v.setEmailNV(rs.getString("nhanvien"));
-//                p.setTrangThai(rs.getBoolean("trangthai"));
+                v.setThanhToan(rs.getBoolean("thanhtoan"));
                 listVe.add(v);
             }
         } catch (Exception e) {
@@ -73,6 +77,16 @@ public class VeDAO extends MainDAO<Ve, Integer>  {
         }
 
         return listVe;
+    }
+
+    @Override
+    public Ve SelectById(Integer Id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    public List<Ve> selectBySC (int masc)
+    {
+        String sql = "select * from ve where masuatchieu = ? order by maghe";
+        return this.selectBySQL(sql, masc);
     }
     
 }

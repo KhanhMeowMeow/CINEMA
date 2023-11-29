@@ -20,7 +20,7 @@ public class PhimDAO extends MainDAO<Phim, String> {
     final String Insert_SQL = "insert into Phim (maphim, tenphim, thoiluong, theloai, namsx, nuocsx, noidung, poster, dienvien, "
             + " trangthai) values (?,?,?,?,?,?,?,?,?,?)";
     final String Update_SQL = "update Phim set  tenphim = ?, thoiluong= ?, theloai =?, namsx = ?, nuocsx = ?"
-            + " noidung =? , poster = ?, dienvien = ? , trangthai = ? where maphim = ?";
+            + " ,noidung =? , poster = ?, dienvien = ? , trangthai = ? where maphim = ?";
     final String Delete_SQL = "update Phim set trangthai = 0 where maphim = ?";
     final String SelectAll_SQL = "select * from Phim";
     final String SelectById_SQL = "select * from Phim Where maphim = ?";
