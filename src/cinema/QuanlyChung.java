@@ -51,7 +51,7 @@ public class QuanlyChung extends JFrame {
           panIMG_nhanvien = new JPanel();
           panContainerInfo_nhanvien.add(panIMG_nhanvien);
           panContainerInfo_nhanvien.setLayout(null);
-          panIMG_nhanvien.setBackground(Color.BLACK);
+          panIMG_nhanvien.setBackground(Color.PINK);
           panIMG_nhanvien.setBounds(515, 5, 150, 190);
 
           labTenNhanvien = new JLabel("Tên nhân viên:");
@@ -145,7 +145,8 @@ public class QuanlyChung extends JFrame {
                     JOptionPane.showMessageDialog(null, "Comming soon !");
                }
           });
-
+         
+          
      }
      public static void main(String[] args) {
           try {

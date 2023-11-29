@@ -88,7 +88,7 @@ public class QuanLyVe extends JFrame{
           panContainerItem_Phim.setLayout(null);
           panIMG_Phim = new JPanel();
           panIMG_Phim.setBounds(0, 0, 180,((h/2)-10) -70 );
-          panIMG_Phim.setBackground(Color.lightGray);
+          panIMG_Phim.setBackground(Color.PINK);
           labPhim = new JLabel();
           labPhim.setFont(new Font("Arial", 0, 20));
           labPhim.setText(tenPhim);
