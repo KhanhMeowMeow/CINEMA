@@ -30,8 +30,6 @@ public class QuanLyVe extends JFrame{
      }
      
      private void initComponents() {
-          
-
           //Thiết kế cửa sổ
           setSize(w, h);
           setLocationRelativeTo(null);
@@ -104,22 +102,17 @@ public class QuanLyVe extends JFrame{
                     listenQuanLyVe.getListenQuanLyVe().xemve_quanLyVe();
                }
           });
-          
-          
           return panContainerItem_Phim;
-     }
-     public void themve(){
-          JOptionPane.showMessageDialog(null, "Đã thêm");
      }
      
      public static void main(String[] args) {
           try {
-          for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-               if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+               for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Windows".equals(info.getName())) {
+                         javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                         break;
+                    }
                }
-          }
           } catch (ClassNotFoundException ex) {
           java.util.logging.Logger.getLogger(QuanLyVe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
           } catch (InstantiationException ex) {
